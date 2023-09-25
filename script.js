@@ -26,6 +26,7 @@ function matchCards(img1, img2) {
                 displayWinMessage();
             }, 1000);
         }
+        
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
         cardOne = cardTwo = "";
@@ -59,16 +60,23 @@ function shuffleCard() {
     });
 }
 
-function displayWinMessage() {
-    winMessage.style.display = "block";
-    restartButton.style.display = "block";
-}
+ 
 
 function restartGame() {
     winMessage.style.display = "none";
     restartButton.style.display = "none";
+    
     shuffleCard();
 }
+
+ 
+function displayWinMessage() {
+    winMessage.innerHTML = "You Win! 🥳🥳";
+    winMessage.style.display = "block";
+    restartButton.style.display = "block";
+     
+}
+
 
 shuffleCard();
 
